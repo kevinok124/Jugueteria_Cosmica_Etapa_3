@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="class-body">
+
+    <header class="class-header">
+        <nav class="nav_bar">
+            <ul>
+                <li><a href="#/home">inicio</a></li>
+                <li><a href="#/create">alta</a></li>
+                <li><a href="#/contact">contacto</a></li>
+                <li><a href="#/about-us">nosotros</a></li>
+                <li>
+                    <button class="header-icon btn-cart-toggle">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <p class="pCarrito">Carrito</p>
+                    </button>   
+                </li>
+            </ul>
+
+            <div id="main-header">
+                <div id="header-icons-wrapper">
+                    
+                </div>
+            </div>
+            <img src="img/logo.png" alt="Juguetería Cósmica">
+    </header>
+
+   <!-- CART CONTAINER -->
+   <section class="cart-modal-container">
+    <span class="close-button" type="button">&times;</span>
+    <h2 >Mi compra:</h2>
+    <div class="cart-items">
+        <table>
+            <tr>
+                <th class="product" scope="col" colspan="2">Producto</th>
+                <th class="product-price" scope="col">Precio</th>
+                <th class="quantity" scope="col">Cantidad</th>
+                <th class="quantity-price" scope="col">Total</th>
+                <th class="item-remove" scope="col"></th>
+            </tr>
+        
+            <!-- acá comienzan los items del carrito -->
+
+            <tr>
+                <td><img src="img/products/Figura capitan america avengers.jpg" alt="Capitan America Avengers"></td>
+                <td>Capitan America Avengers</td>
+                <td class="cart-product-price">$ 19.541,50</td>
+                <td class="cart-product-cant">1</td>
+                <td class="cart-product-sub_total">$ 19.541,50</td>
+                <td class="btn-cart-product__del"><i class="material-symbols-outlined btn-cart-product__del">delete</i></td>
+            </tr>
+
+            <tr>
+                <td><img src="img/products/Figura Gandalf Lord of the rings.jpg" alt="Gandalf Lord Of The Rings"></td>
+                <td>Gandalf Lord Of The Rings</td>
+                <td class="cart-product-price">$ 19.541,50</td>
+                <td class="cart-product-cant">1</td>
+                <td class="cart-product-sub_total">$ 19.541,50</td>
+                <td class="btn-cart-product__del"><i class="material-symbols-outlined btn-cart-product__del">delete</i></td>
+            </tr>
+
+            <tr>
+                <td><img src="img/products/Figura Hulk the infinity.jpg" alt="Hulk The Infinity"></td>
+                <td>Hulk The Infinity</td>
+                <td class="cart-product-price">$ 16.991,50</td>
+                <td class="cart-product-cant">1</td>
+                <td class="cart-product-sub_total">$ 16.991,50</td>
+                <td class="btn-cart-product__del"><i class="material-symbols-outlined btn-cart-product__del">delete</i></td>
+            </tr>
+
+            <tr>
+                <td><img src="img/products/Figura Iron man.jpg" alt="Iron Man Avengers Endgame"></td>
+                <td>Iron Man Avengers Endgame</td>
+                <td class="cart-product-price">$ 19.541,50</td>
+                <td class="cart-product-cant">1</td>
+                <td class="cart-product-sub_total">$ 19.541,50</td>
+                <td class="btn-cart-product__del"><i class="material-symbols-outlined btn-cart-product__del">delete</i></td>
+            </tr>
+
+            <tr>
+                <td><img src="img/products/Figura Thor avengers.jpg" alt="Thor Avengers Endgame"></td>
+                <td>Thor Avengers Endgame</td>
+                <td class="cart-product-price">$ 16.991,50</td>
+                <td class="cart-product-cant">1</td>
+                <td class="cart-product-sub_total">$ 16.991,50</td>
+                <td class="btn-cart-product__del"><i class="material-symbols-outlined btn-cart-product__del">delete</i></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>$ 92.607,50</td>
+                <td></i></td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+    <main class="main-index">
+        <h2 class ="h2-index">Nuestros productos</h2>
+        
+        <div id="product-container"></div>
+    </main>
+
+    <footer class="class-footer">
+        <div class="footer-proyect">
+            <h3>Nombre del Proyecto</h3>
+            <p>Proyecto Integrador: "Juguetería Cósmica"</p>
+            <p>Alumno:  Kevin Leonel Okulczyk</p>
+        </div>
+
+        <div>
+            <h3>Enlaces</h3>
+            <nav>
+                <ul>
+                    <li><a href="#/home">Home</a></li>
+                    <li><a href="#/create">Alta</a></li>
+                    <li><a href="#/contact">Contacto</a></li>
+                    <li><a href="#/about-us">Nosotros</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="footer-autor">
+            <h3>Derechos de autor</h3>
+            <p>Kevin Leonel Okulczyk Bootcamp Educación IT</p>
+            <p>Copyright © Juguetería Cósmica 2023 </p>
+        </div>
+    </footer>
+
+    <script src="js/vendor/handlebars/handlebars.min-v4.7.7.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

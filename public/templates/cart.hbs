@@ -1,0 +1,35 @@
+<span class="modal-close">X</span>
+            <!-- <h2 class="modal-title">Carrito</h2> -->
+            <table>
+                <caption>Productos en Carrito</caption>
+                <tr>
+                    <th colspan="2">Productos</th>
+                    <th>Precio</th>
+                    <th>Cant.</th>
+                    <th>Subtotal</th>
+                    <th></th>
+                </tr>
+                <!-- Producto -->
+                {{#each products}}
+                    <tr class="cart-product" data-product-id="{{id}}" data-name="{{name}}" data-category="{{category}}" data-price="{{price}}" data-cant="{{amount}}">
+                        <td><img src="img/products/{{img}}" alt="{{imgTextAlt}}"></td>
+                        <td>{{name}}</td>
+                        <td class="cart-product-price">$ {{price}}</td>
+                        <td class="cart-product-min"><i class="fa-solid fa-circle-minus product-min"></i></td>
+                        <td class="cart-product-cant">{{amount}}</td>
+                        <td class="cart-product-add"><i class="fa-solid fa-circle-plus product-add"></i></td>
+                        <td class="cart-product-sub_total">$ {{subTotal this}}</td>
+                        <td class="btn-cart-product__del"><i class="material-symbols-outlined btn-cart-product__del">delete</i></td>
+                    </tr>
+                {{/each}}
+                <!-- Fin producto -->
+                <tr>
+                    <td colspan="6" class="title-total">Total</td>
+                    <td class="cart-product-total"></td>
+                    <td></td>
+                </tr>
+            </table>
+            <div class="modal-confirm" data-product-id data-name>
+                <p>Desea Eliminar el producto?</p>
+                <button class="btn modal-confirm__del">Si</button><button class="btn modal-confirm__cancel">No</button>
+            </div>
