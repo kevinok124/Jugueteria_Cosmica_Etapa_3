@@ -1,4 +1,4 @@
-import productController from '/js/controllers/product.js';
+import productController from '../controllers/product.js';
 
 console.warn('🆗: Módulo PageHome cargado.');
 
