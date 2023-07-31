@@ -36,78 +36,20 @@
             <img src="img/logo.png" alt="Juguetería Cósmica">
     </header>
 
-   <!-- CART CONTAINER -->
-   <section class="cart-modal-container">
-    <span class="close-button" type="button">&times;</span>
-    <h2 >Mi compra:</h2>
-    <div class="cart-items">
-        <table>
-            <tr>
-                <th class="product" scope="col" colspan="2">Producto</th>
-                <th class="product-price" scope="col">Precio</th>
-                <th class="quantity" scope="col">Cantidad</th>
-                <th class="quantity-price" scope="col">Total</th>
-                <th class="item-remove" scope="col"></th>
-            </tr>
-        
-            <!-- acá comienzan los items del carrito -->
-
-            <tr>
-                <td><img src="img/products/Figura capitan america avengers.jpg" alt="Capitan America Avengers"></td>
-                <td>Capitan America Avengers</td>
-                <td class="cart-product-price">$ 19.541,50</td>
-                <td class="cart-product-cant">1</td>
-                <td class="cart-product-sub_total">$ 19.541,50</td>
-                <td class="btn-cart-product__del"><i class="material-symbols-outlined btn-cart-product__del">delete</i></td>
-            </tr>
-
-            <tr>
-                <td><img src="img/products/Figura Gandalf Lord of the rings.jpg" alt="Gandalf Lord Of The Rings"></td>
-                <td>Gandalf Lord Of The Rings</td>
-                <td class="cart-product-price">$ 19.541,50</td>
-                <td class="cart-product-cant">1</td>
-                <td class="cart-product-sub_total">$ 19.541,50</td>
-                <td class="btn-cart-product__del"><i class="material-symbols-outlined btn-cart-product__del">delete</i></td>
-            </tr>
-
-            <tr>
-                <td><img src="img/products/Figura Hulk the infinity.jpg" alt="Hulk The Infinity"></td>
-                <td>Hulk The Infinity</td>
-                <td class="cart-product-price">$ 16.991,50</td>
-                <td class="cart-product-cant">1</td>
-                <td class="cart-product-sub_total">$ 16.991,50</td>
-                <td class="btn-cart-product__del"><i class="material-symbols-outlined btn-cart-product__del">delete</i></td>
-            </tr>
-
-            <tr>
-                <td><img src="img/products/Figura Iron man.jpg" alt="Iron Man Avengers Endgame"></td>
-                <td>Iron Man Avengers Endgame</td>
-                <td class="cart-product-price">$ 19.541,50</td>
-                <td class="cart-product-cant">1</td>
-                <td class="cart-product-sub_total">$ 19.541,50</td>
-                <td class="btn-cart-product__del"><i class="material-symbols-outlined btn-cart-product__del">delete</i></td>
-            </tr>
-
-            <tr>
-                <td><img src="img/products/Figura Thor avengers.jpg" alt="Thor Avengers Endgame"></td>
-                <td>Thor Avengers Endgame</td>
-                <td class="cart-product-price">$ 16.991,50</td>
-                <td class="cart-product-cant">1</td>
-                <td class="cart-product-sub_total">$ 16.991,50</td>
-                <td class="btn-cart-product__del"><i class="material-symbols-outlined btn-cart-product__del">delete</i></td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>$ 92.607,50</td>
-                <td></i></td>
-            </tr>
-        </table>
-    </div>
-</section>
+    <!-- CART CONTAINER -->
+    <section class="cart-modal-container">
+        <span class="close-button" type="button">&times;</span>
+        <h2 >Mi compra:</h2>
+        <div class="cart-items">
+            <table>
+                <!-- ACA ESTABAN LOS ITEMS DEL CARRITO CARGADOS EN EL HTML -->
+                <tbody id="cart-items-table">
+                    <!-- Los ítems del carrito se agregarán aquí con JavaScript -->
+                    <a href="#" class="card-link__add">Agregar</a>
+                </tbody>
+            </table>
+        </div>
+    </section>
 
     <main class="main-index">
         <h2 class ="h2-index">Nuestros productos</h2>

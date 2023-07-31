@@ -45,7 +45,13 @@ class PageCreate {
                 return;
             }
             if (e.target.classList.contains('btn-edit')) {
+                console.log("guardar");
                 PageCreate.completeForm(e);
+
+            
+                alert('Se han guardado únicamente los cambios de la fila del botón presionado.');
+                window.location.reload();
+
                 return;
             }
         });
@@ -75,7 +81,27 @@ class PageCreate {
 
         PageCreate.prepareTable();
     }
-
 }
+
+const guardar = document.getElementById('guardar');
+const nombre = document.getElementById('name');
+const price = document.getElementById('price');
+const stock = document.getElementById('stock');
+const brand = document.getElementById('brand');
+const category = document.getElementById('category');
+
+nombre.addEventListener('input', validarFormulario);
+price.addEventListener('input', validarFormulario);
+stock.addEventListener('input', validarFormulario);
+brand.addEventListener('input', validarFormulario);
+category.addEventListener('input', validarFormulario);
+
+function validarFormulario() {
+    if (nombre.value.trim() !== '' && price.value.trim() !== '' && stock.value.trim() !== '' && brand.value.trim() !== '' && category.value.trim() !== '') {
+        guardar.disabled = false;
+    } else {
+        guardar.disabled = true;
+    }
+} 
 
 export default PageCreate;

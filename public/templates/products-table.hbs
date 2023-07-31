@@ -1,9 +1,9 @@
 {{#if products.length }}
     <table class="table-products">
-        <caption>Productos</caption>
         <thead>
+            <caption>Productos (para editar el contenido de cualquier producto hacer doble click sobre el elemento a editar y luego presionar en 'Guardar'.)</caption>
             <tr>
-                <th scope="column">Id</th>
+                <th data-product-property="id" scope="column">Id</th>
                 <th scope="column">Nombre</th>
                 <th scope="column">Precio</th>
                 <th scope="column">Descripción</th>
@@ -18,7 +18,7 @@
                     <td contenteditable="true" data-product-property="price">{{price}}</td>
                     <td contenteditable="true" data-product-property="shortDescription">{{shortDescription}}</td>
                     <td>
-                        <button class="btn-edit" title="Editar producto">Editar</button>
+                        <button class="btn-edit" title="Editar producto">Guardar</button>
                         <button class="btn-delete" title="Eliminar producto">Eliminar</button>
                     </td>
                 </tr>

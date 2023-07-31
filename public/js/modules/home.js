@@ -17,8 +17,8 @@ class PageHome {
         const products = await productController.getProducts();
         PageHome.renderTemplateCards(products);
     
-        console.log(`Se encontraron ${products.length} productos.`);
 
+        console.log(`Se encontraron ${products.length} productos.`);
     }
 }
 
