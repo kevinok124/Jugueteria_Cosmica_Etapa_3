@@ -201,9 +201,41 @@ fieldset >div input::placeholder{
     padding-left: 5px;
 }
 
-#guardar{
+/* #guardar{
     margin-bottom: 15px;
+} */
+
+/* button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    margin: 1px;
 }
+
+button:hover {
+    background-color: #45a049; 
+} */
+
+/* button:disabled {
+    
+    background-color: #ccc; 
+    color: #999; 
+
+    
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 16px; 
+
+    box-shadow: none; 
+    cursor: not-allowed; 
+} */
+
 
 
 label{
@@ -381,7 +413,7 @@ header img{
 
 .cart-items>table{
     width: 100%;
-    height: auto;
+    height: 550px;
     border-collapse: collapse;
     border-spacing: 0;
 }
@@ -679,4 +711,72 @@ header img{
 
 .accordion-content p {
     margin-bottom: 5px;
+}
+
+
+/* Diseño de la tabla de productos cargados */
+
+.products-table-container {
+    background-color: #f2f2f2; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; 
+    width: 100%;
+}
+
+.products-table-container td,
+.products-table-container th {
+    padding: 12px;
+    text-align: left; 
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.products-table-container th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+
+.products-table-container tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.products-table-container tr:hover {
+    background-color: #e0e0e0;
+    transition: background-color 0.2s ease;
+}
+
+.products-table-container table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.products-table-container thead {
+    font-size: 1.1rem;
+}
+
+.products-table-container tfoot {
+    font-weight: bold;
+}
+
+.products-table-container td[contenteditable="true"] {
+    background-color: #fffacd;
+    border: 1px solid #ffc107;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    cursor: pointer;
+}
+
+.table-products caption {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff0000;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.table-products [data-product-property="id"],
+.table-products [data-product-property="_id"] {
+    display: none;
 }
