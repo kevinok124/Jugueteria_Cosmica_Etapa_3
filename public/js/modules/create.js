@@ -13,6 +13,7 @@ class PageCreate {
         const row = e.target.closest('tr');
         const _id = row.querySelector('td[data-product-property="_id"]').innerHTML;
         const deletedProduct = await productController.deleteProduct(_id);
+        
         PageCreate.loadTable();
         return deletedProduct;
     }
@@ -37,25 +38,29 @@ class PageCreate {
         console.log('productToEdit:', productToEdit);
     }
 
-    static async addTableEvents() {
-        PageCreate.productsTableContainer.addEventListener('click', async e => {
-            if (e.target.classList.contains('btn-delete')) {
-                const deletedProduct = await PageCreate.deleteProduct(e);
-                console.log('deletedProduct:', deletedProduct);
-                return;
-            }
-            if (e.target.classList.contains('btn-edit')) {
-                console.log("guardar");
-                PageCreate.completeForm(e);
+    static async handleTableClick(e) {
+        if (e.target.classList.contains('btn-delete')) {
+            const deletedProduct = await PageCreate.deleteProduct(e);
+            console.log('deletedProduct:', deletedProduct);
+            return;
+        }
 
-            
-                alert('Se han guardado únicamente los cambios de la fila del botón presionado.');
-                window.location.reload();
+        if (e.target.classList.contains('btn-edit')) {
+            console.log("guardar");
+            PageCreate.completeForm(e);
 
-                return;
-            }
-        });
+            alert('Se han guardado únicamente los cambios de la fila del botón presionado.');
+            /* window.location.reload(); */
+
+            return;
+        }
     }
+
+    static async addTableEvents() {
+        PageCreate.productsTableContainer.removeEventListener('click', PageCreate.handleTableClick);
+        PageCreate.productsTableContainer.addEventListener('click', PageCreate.handleTableClick);
+    }
+
 
     static async renderTemplateTable(products) {
         const hbsFile = await fetch('templates/products-table.hbs').then(r => r.text());
@@ -77,31 +82,57 @@ class PageCreate {
     }
 
     static async init () {
-        console.log('PageCreate.init()');
+    console.log('PageCreate.init()');
+
+        PageCreate.productsTableContainer = document.querySelector('.products-table-container');
+        await PageCreate.loadTable();
+        PageCreate.addTableEvents();
+
+        const guardarNuevo = document.getElementById('guardarNuevo');
+        const nombre = document.getElementById('name');
+        const price = document.getElementById('price');
+        const stock = document.getElementById('stock');
+        const brand = document.getElementById('brand');
+        const category = document.getElementById('category');
+        const shortDescription = document.getElementById('short-description');
+
+        nombre.addEventListener('input', validarFormulario);
+        price.addEventListener('input', validarFormulario);
+        stock.addEventListener('input', validarFormulario);
+        brand.addEventListener('input', validarFormulario);
+        category.addEventListener('input', validarFormulario);
+        guardarNuevo.addEventListener('click', crearNuevoProducto);
+
+        function validarFormulario() {
+
+            if (nombre.value.trim() !== '' && price.value.trim() !== '' && stock.value.trim() !== '' && brand.value.trim() !== '' && category.value.trim() !== '') {
+                guardarNuevo.disabled = false;
+            } else {
+                guardarNuevo.disabled = true;
+            }
+        } 
+
+        async function crearNuevoProducto() {
+            const product = {
+                name: nombre.value,
+                price: price.value,
+                stock: stock.value,
+                brand: brand.value,
+                category: category.value,
+                shortDescription: shortDescription.value
+            };
+        
+            const creado = await productController.saveProduct(product);
+            if (creado) {
+                alert('Producto creado exitosamente.');
+                // Si deseas hacer algo más después de crear el producto, puedes agregarlo aquí.
+            } else {
+                alert('Hubo un error al crear el producto.');
+            }
+        }
 
         PageCreate.prepareTable();
     }
 }
-
-const guardar = document.getElementById('guardar');
-const nombre = document.getElementById('name');
-const price = document.getElementById('price');
-const stock = document.getElementById('stock');
-const brand = document.getElementById('brand');
-const category = document.getElementById('category');
-
-nombre.addEventListener('input', validarFormulario);
-price.addEventListener('input', validarFormulario);
-stock.addEventListener('input', validarFormulario);
-brand.addEventListener('input', validarFormulario);
-category.addEventListener('input', validarFormulario);
-
-function validarFormulario() {
-    if (nombre.value.trim() !== '' && price.value.trim() !== '' && stock.value.trim() !== '' && brand.value.trim() !== '' && category.value.trim() !== '') {
-        guardar.disabled = false;
-    } else {
-        guardar.disabled = true;
-    }
-} 
 
 export default PageCreate;
